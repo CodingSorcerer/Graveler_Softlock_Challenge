@@ -88,7 +88,7 @@ int main()
     std::thread tracker([&numJobsRun, &jobsRunMutex]()
     {
         int percentFinished = 0;
-        for (int x=0; x<100; x++) std::cout << "🮐" << std::flush;
+        for (int x=0; x<100; x++) std::cout << "░" << std::flush;
 
         do
         {
@@ -100,8 +100,8 @@ int main()
             {
                 std::cout << "\r" << std::flush;
 
-                for (int x=0; x<percentFinished; x++) std::cout << "🮋" << std::flush;
-                for (int x=percentFinished; x<100; x++) std::cout << "🮐" << std::flush;
+                for (int x=0; x<percentFinished; x++) std::cout << "█" << std::flush;
+                for (int x=percentFinished; x<100; x++) std::cout << "░" << std::flush;
             }
         }
         while(percentFinished < 100);
